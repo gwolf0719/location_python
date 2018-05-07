@@ -1,0 +1,202 @@
+[Tue May 08 00:36:32.309688 2018] [:error] [pid 17980] [client 123.110.25.19:55414] [2018-05-08 00:36:32,309] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:36:32.309737 2018] [:error] [pid 17980] [client 123.110.25.19:55414] Traceback (most recent call last):
+[Tue May 08 00:36:32.309743 2018] [:error] [pid 17980] [client 123.110.25.19:55414]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:36:32.309746 2018] [:error] [pid 17980] [client 123.110.25.19:55414]     response = self.full_dispatch_request()
+[Tue May 08 00:36:32.309750 2018] [:error] [pid 17980] [client 123.110.25.19:55414]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:36:32.309754 2018] [:error] [pid 17980] [client 123.110.25.19:55414]     return self.finalize_request(rv)
+[Tue May 08 00:36:32.309757 2018] [:error] [pid 17980] [client 123.110.25.19:55414]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:36:32.309760 2018] [:error] [pid 17980] [client 123.110.25.19:55414]     response = self.make_response(rv)
+[Tue May 08 00:36:32.309763 2018] [:error] [pid 17980] [client 123.110.25.19:55414]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Tue May 08 00:36:32.309766 2018] [:error] [pid 17980] [client 123.110.25.19:55414]     'The view function did not return a valid response. The'
+[Tue May 08 00:36:32.309770 2018] [:error] [pid 17980] [client 123.110.25.19:55414] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Tue May 08 00:37:25.234896 2018] [:error] [pid 17978] [client 123.110.25.19:55418] [2018-05-08 00:37:25,234] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:37:25.234938 2018] [:error] [pid 17978] [client 123.110.25.19:55418] Traceback (most recent call last):
+[Tue May 08 00:37:25.234944 2018] [:error] [pid 17978] [client 123.110.25.19:55418]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:37:25.234948 2018] [:error] [pid 17978] [client 123.110.25.19:55418]     response = self.full_dispatch_request()
+[Tue May 08 00:37:25.234952 2018] [:error] [pid 17978] [client 123.110.25.19:55418]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:37:25.234956 2018] [:error] [pid 17978] [client 123.110.25.19:55418]     return self.finalize_request(rv)
+[Tue May 08 00:37:25.234959 2018] [:error] [pid 17978] [client 123.110.25.19:55418]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:37:25.234962 2018] [:error] [pid 17978] [client 123.110.25.19:55418]     response = self.make_response(rv)
+[Tue May 08 00:37:25.234965 2018] [:error] [pid 17978] [client 123.110.25.19:55418]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Tue May 08 00:37:25.234969 2018] [:error] [pid 17978] [client 123.110.25.19:55418]     'The view function did not return a valid response. The'
+[Tue May 08 00:37:25.234973 2018] [:error] [pid 17978] [client 123.110.25.19:55418] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Tue May 08 00:37:43.787281 2018] [:error] [pid 17981] [client 123.110.25.19:55421] [2018-05-08 00:37:43,785] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:37:43.787312 2018] [:error] [pid 17981] [client 123.110.25.19:55421] Traceback (most recent call last):
+[Tue May 08 00:37:43.787316 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:37:43.787320 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     response = self.full_dispatch_request()
+[Tue May 08 00:37:43.787325 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:37:43.787337 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     return self.finalize_request(rv)
+[Tue May 08 00:37:43.787340 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:37:43.787343 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     response = self.make_response(rv)
+[Tue May 08 00:37:43.787346 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in make_response
+[Tue May 08 00:37:43.787349 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     reraise(TypeError, new_error, sys.exc_info()[2])
+[Tue May 08 00:37:43.787352 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1974, in make_response
+[Tue May 08 00:37:43.787355 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     rv = self.response_class.force_type(rv, request.environ)
+[Tue May 08 00:37:43.787357 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib/python2.7/site-packages/werkzeug/wrappers.py", line 921, in force_type
+[Tue May 08 00:37:43.787360 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     response = BaseResponse(*_run_wsgi_app(response, environ))
+[Tue May 08 00:37:43.787363 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib/python2.7/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+[Tue May 08 00:37:43.787366 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     return _run_wsgi_app(*args)
+[Tue May 08 00:37:43.787369 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib/python2.7/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+[Tue May 08 00:37:43.787372 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     app_rv = app(environ, start_response)
+[Tue May 08 00:37:43.787375 2018] [:error] [pid 17981] [client 123.110.25.19:55421]   File "/usr/lib64/python2.7/site-packages/flask/wrappers.py", line 65, in get_json
+[Tue May 08 00:37:43.787377 2018] [:error] [pid 17981] [client 123.110.25.19:55421]     if cache and self._cached_json[silent] is not Ellipsis:
+[Tue May 08 00:37:43.787380 2018] [:error] [pid 17981] [client 123.110.25.19:55421] TypeError: tuple indices must be integers, not function
+[Tue May 08 00:37:43.787386 2018] [:error] [pid 17981] [client 123.110.25.19:55421] The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a instancemethod.
+[Tue May 08 00:37:53.837959 2018] [:error] [pid 17982] [client 123.110.25.19:55423] [2018-05-08 00:37:53,837] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:37:53.837997 2018] [:error] [pid 17982] [client 123.110.25.19:55423] Traceback (most recent call last):
+[Tue May 08 00:37:53.838001 2018] [:error] [pid 17982] [client 123.110.25.19:55423]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:37:53.838005 2018] [:error] [pid 17982] [client 123.110.25.19:55423]     response = self.full_dispatch_request()
+[Tue May 08 00:37:53.838009 2018] [:error] [pid 17982] [client 123.110.25.19:55423]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:37:53.838012 2018] [:error] [pid 17982] [client 123.110.25.19:55423]     return self.finalize_request(rv)
+[Tue May 08 00:37:53.838015 2018] [:error] [pid 17982] [client 123.110.25.19:55423]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:37:53.838018 2018] [:error] [pid 17982] [client 123.110.25.19:55423]     response = self.make_response(rv)
+[Tue May 08 00:37:53.838021 2018] [:error] [pid 17982] [client 123.110.25.19:55423]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Tue May 08 00:37:53.838024 2018] [:error] [pid 17982] [client 123.110.25.19:55423]     'The view function did not return a valid response. The'
+[Tue May 08 00:37:53.838038 2018] [:error] [pid 17982] [client 123.110.25.19:55423] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Tue May 08 00:38:09.399646 2018] [:error] [pid 18032] [client 123.110.25.19:55429] [2018-05-08 00:38:09,399] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:38:09.399698 2018] [:error] [pid 18032] [client 123.110.25.19:55429] Traceback (most recent call last):
+[Tue May 08 00:38:09.399715 2018] [:error] [pid 18032] [client 123.110.25.19:55429]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:38:09.399720 2018] [:error] [pid 18032] [client 123.110.25.19:55429]     response = self.full_dispatch_request()
+[Tue May 08 00:38:09.399727 2018] [:error] [pid 18032] [client 123.110.25.19:55429]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:38:09.399732 2018] [:error] [pid 18032] [client 123.110.25.19:55429]     return self.finalize_request(rv)
+[Tue May 08 00:38:09.399736 2018] [:error] [pid 18032] [client 123.110.25.19:55429]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:38:09.399739 2018] [:error] [pid 18032] [client 123.110.25.19:55429]     response = self.make_response(rv)
+[Tue May 08 00:38:09.399743 2018] [:error] [pid 18032] [client 123.110.25.19:55429]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Tue May 08 00:38:09.399747 2018] [:error] [pid 18032] [client 123.110.25.19:55429]     'The view function did not return a valid response. The'
+[Tue May 08 00:38:09.399752 2018] [:error] [pid 18032] [client 123.110.25.19:55429] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Tue May 08 00:41:26.945269 2018] [:error] [pid 18033] [client 123.110.25.19:55491] mod_wsgi (pid=18033): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Tue May 08 00:41:26.945316 2018] [:error] [pid 18033] [client 123.110.25.19:55491] mod_wsgi (pid=18033): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Tue May 08 00:41:26.945332 2018] [:error] [pid 18033] [client 123.110.25.19:55491] Traceback (most recent call last):
+[Tue May 08 00:41:26.945353 2018] [:error] [pid 18033] [client 123.110.25.19:55491]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Tue May 08 00:41:26.945397 2018] [:error] [pid 18033] [client 123.110.25.19:55491]     from flaskapp import app as application
+[Tue May 08 00:41:26.945425 2018] [:error] [pid 18033] [client 123.110.25.19:55491]   File "/var/www/html/location/flaskapp.py", line 30
+[Tue May 08 00:41:26.945431 2018] [:error] [pid 18033] [client 123.110.25.19:55491]     data = request.get_json()
+[Tue May 08 00:41:26.945435 2018] [:error] [pid 18033] [client 123.110.25.19:55491]    ^
+[Tue May 08 00:41:26.945439 2018] [:error] [pid 18033] [client 123.110.25.19:55491] IndentationError: unexpected indent
+[Tue May 08 00:41:42.319712 2018] [:error] [pid 18036] [client 123.110.25.19:55494] mod_wsgi (pid=18036): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Tue May 08 00:41:42.319757 2018] [:error] [pid 18036] [client 123.110.25.19:55494] mod_wsgi (pid=18036): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Tue May 08 00:41:42.319774 2018] [:error] [pid 18036] [client 123.110.25.19:55494] Traceback (most recent call last):
+[Tue May 08 00:41:42.319794 2018] [:error] [pid 18036] [client 123.110.25.19:55494]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Tue May 08 00:41:42.319838 2018] [:error] [pid 18036] [client 123.110.25.19:55494]     from flaskapp import app as application
+[Tue May 08 00:41:42.319866 2018] [:error] [pid 18036] [client 123.110.25.19:55494]   File "/var/www/html/location/flaskapp.py", line 30
+[Tue May 08 00:41:42.319881 2018] [:error] [pid 18036] [client 123.110.25.19:55494]     data = request.get_json
+[Tue May 08 00:41:42.319885 2018] [:error] [pid 18036] [client 123.110.25.19:55494]    ^
+[Tue May 08 00:41:42.319889 2018] [:error] [pid 18036] [client 123.110.25.19:55494] IndentationError: unexpected indent
+[Tue May 08 00:42:00.449710 2018] [:error] [pid 18034] [client 123.110.25.19:55496] mod_wsgi (pid=18034): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Tue May 08 00:42:00.449760 2018] [:error] [pid 18034] [client 123.110.25.19:55496] mod_wsgi (pid=18034): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Tue May 08 00:42:00.449778 2018] [:error] [pid 18034] [client 123.110.25.19:55496] Traceback (most recent call last):
+[Tue May 08 00:42:00.449799 2018] [:error] [pid 18034] [client 123.110.25.19:55496]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Tue May 08 00:42:00.449844 2018] [:error] [pid 18034] [client 123.110.25.19:55496]     from flaskapp import app as application
+[Tue May 08 00:42:00.449872 2018] [:error] [pid 18034] [client 123.110.25.19:55496]   File "/var/www/html/location/flaskapp.py", line 30
+[Tue May 08 00:42:00.449878 2018] [:error] [pid 18034] [client 123.110.25.19:55496]     data = request.json
+[Tue May 08 00:42:00.449882 2018] [:error] [pid 18034] [client 123.110.25.19:55496]    ^
+[Tue May 08 00:42:00.449886 2018] [:error] [pid 18034] [client 123.110.25.19:55496] IndentationError: unexpected indent
+[Tue May 08 00:42:16.092091 2018] [:error] [pid 18032] [client 123.110.25.19:55499] [2018-05-08 00:42:16,091] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:42:16.092135 2018] [:error] [pid 18032] [client 123.110.25.19:55499] Traceback (most recent call last):
+[Tue May 08 00:42:16.092142 2018] [:error] [pid 18032] [client 123.110.25.19:55499]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:42:16.092146 2018] [:error] [pid 18032] [client 123.110.25.19:55499]     response = self.full_dispatch_request()
+[Tue May 08 00:42:16.092150 2018] [:error] [pid 18032] [client 123.110.25.19:55499]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Tue May 08 00:42:16.092154 2018] [:error] [pid 18032] [client 123.110.25.19:55499]     return self.finalize_request(rv)
+[Tue May 08 00:42:16.092158 2018] [:error] [pid 18032] [client 123.110.25.19:55499]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Tue May 08 00:42:16.092162 2018] [:error] [pid 18032] [client 123.110.25.19:55499]     response = self.make_response(rv)
+[Tue May 08 00:42:16.092166 2018] [:error] [pid 18032] [client 123.110.25.19:55499]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Tue May 08 00:42:16.092169 2018] [:error] [pid 18032] [client 123.110.25.19:55499]     'The view function did not return a valid response. The'
+[Tue May 08 00:42:16.092176 2018] [:error] [pid 18032] [client 123.110.25.19:55499] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Tue May 08 00:52:40.615057 2018] [:error] [pid 18156] [client 123.110.25.19:55645] [2018-05-08 00:52:40,614] ERROR in app: Exception on /api_tasks/ [POST]
+[Tue May 08 00:52:40.615113 2018] [:error] [pid 18156] [client 123.110.25.19:55645] Traceback (most recent call last):
+[Tue May 08 00:52:40.615137 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 00:52:40.615143 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     response = self.full_dispatch_request()
+[Tue May 08 00:52:40.615148 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue May 08 00:52:40.615152 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     rv = self.handle_user_exception(e)
+[Tue May 08 00:52:40.615164 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue May 08 00:52:40.615169 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     reraise(exc_type, exc_value, tb)
+[Tue May 08 00:52:40.615172 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue May 08 00:52:40.615176 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     rv = self.dispatch_request()
+[Tue May 08 00:52:40.615180 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue May 08 00:52:40.615185 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue May 08 00:52:40.615188 2018] [:error] [pid 18156] [client 123.110.25.19:55645]   File "/var/www/html/location/flaskapp.py", line 32, in api_tasks
+[Tue May 08 00:52:40.615192 2018] [:error] [pid 18156] [client 123.110.25.19:55645]     'json data in request': data.title
+[Tue May 08 00:52:40.615196 2018] [:error] [pid 18156] [client 123.110.25.19:55645] AttributeError: 'dict' object has no attribute 'title'
+[Tue May 08 00:55:44.000205 2018] [:error] [pid 18160] [client 123.110.25.19:55697] mod_wsgi (pid=18160): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Tue May 08 00:55:44.000267 2018] [:error] [pid 18160] [client 123.110.25.19:55697] mod_wsgi (pid=18160): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Tue May 08 00:55:44.000300 2018] [:error] [pid 18160] [client 123.110.25.19:55697] Traceback (most recent call last):
+[Tue May 08 00:55:44.000326 2018] [:error] [pid 18160] [client 123.110.25.19:55697]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Tue May 08 00:55:44.000396 2018] [:error] [pid 18160] [client 123.110.25.19:55697]     from flaskapp import app as application
+[Tue May 08 00:55:44.000411 2018] [:error] [pid 18160] [client 123.110.25.19:55697]   File "/var/www/html/location/flaskapp.py", line 19, in <module>
+[Tue May 08 00:55:44.000467 2018] [:error] [pid 18160] [client 123.110.25.19:55697]     mongo = PyMongo(app)
+[Tue May 08 00:55:44.000494 2018] [:error] [pid 18160] [client 123.110.25.19:55697] NameError: name 'PyMongo' is not defined
+[Tue May 08 01:07:13.089566 2018] [:error] [pid 18209] [client 123.110.25.19:55959] [2018-05-08 01:07:13,078] ERROR in app: Exception on /test/ [POST]
+[Tue May 08 01:07:13.089601 2018] [:error] [pid 18209] [client 123.110.25.19:55959] Traceback (most recent call last):
+[Tue May 08 01:07:13.089607 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 01:07:13.089612 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     response = self.full_dispatch_request()
+[Tue May 08 01:07:13.089615 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue May 08 01:07:13.089619 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     rv = self.handle_user_exception(e)
+[Tue May 08 01:07:13.089622 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue May 08 01:07:13.089626 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     reraise(exc_type, exc_value, tb)
+[Tue May 08 01:07:13.089629 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue May 08 01:07:13.089632 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     rv = self.dispatch_request()
+[Tue May 08 01:07:13.089635 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue May 08 01:07:13.089645 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue May 08 01:07:13.089648 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/var/www/html/location/flaskapp.py", line 40, in api_tasks
+[Tue May 08 01:07:13.089651 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     return jsonify(result)
+[Tue May 08 01:07:13.089654 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 321, in jsonify
+[Tue May 08 01:07:13.089657 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     dumps(data, indent=indent, separators=separators) + '\\n',
+[Tue May 08 01:07:13.089660 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 179, in dumps
+[Tue May 08 01:07:13.089663 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     rv = _json.dumps(obj, **kwargs)
+[Tue May 08 01:07:13.089666 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/__init__.py", line 250, in dumps
+[Tue May 08 01:07:13.089668 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     sort_keys=sort_keys, **kw).encode(obj)
+[Tue May 08 01:07:13.089671 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/encoder.py", line 209, in encode
+[Tue May 08 01:07:13.089674 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     chunks = list(chunks)
+[Tue May 08 01:07:13.089677 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/encoder.py", line 434, in _iterencode
+[Tue May 08 01:07:13.089680 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     for chunk in _iterencode_dict(o, _current_indent_level):
+[Tue May 08 01:07:13.089682 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/encoder.py", line 408, in _iterencode_dict
+[Tue May 08 01:07:13.089685 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     for chunk in chunks:
+[Tue May 08 01:07:13.089688 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/encoder.py", line 442, in _iterencode
+[Tue May 08 01:07:13.089691 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     o = _default(o)
+[Tue May 08 01:07:13.089694 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 81, in default
+[Tue May 08 01:07:13.089697 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     return _json.JSONEncoder.default(self, o)
+[Tue May 08 01:07:13.089700 2018] [:error] [pid 18209] [client 123.110.25.19:55959]   File "/usr/lib64/python2.7/json/encoder.py", line 184, in default
+[Tue May 08 01:07:13.089702 2018] [:error] [pid 18209] [client 123.110.25.19:55959]     raise TypeError(repr(o) + " is not JSON serializable")
+[Tue May 08 01:07:13.089705 2018] [:error] [pid 18209] [client 123.110.25.19:55959] TypeError: ObjectId('5af087c1584b124721fb9a78') is not JSON serializable
+[Tue May 08 01:08:36.881035 2018] [:error] [pid 18241] [client 123.110.25.19:55966] [2018-05-08 01:08:36,879] ERROR in app: Exception on /test/ [POST]
+[Tue May 08 01:08:36.881064 2018] [:error] [pid 18241] [client 123.110.25.19:55966] Traceback (most recent call last):
+[Tue May 08 01:08:36.881069 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 01:08:36.881072 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     response = self.full_dispatch_request()
+[Tue May 08 01:08:36.881076 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue May 08 01:08:36.881080 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     rv = self.handle_user_exception(e)
+[Tue May 08 01:08:36.881091 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue May 08 01:08:36.881094 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     reraise(exc_type, exc_value, tb)
+[Tue May 08 01:08:36.881097 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue May 08 01:08:36.881100 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     rv = self.dispatch_request()
+[Tue May 08 01:08:36.881103 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue May 08 01:08:36.881106 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue May 08 01:08:36.881108 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/var/www/html/location/flaskapp.py", line 39, in api_tasks
+[Tue May 08 01:08:36.881111 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     collection.insert(jsonify(result))
+[Tue May 08 01:08:36.881114 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 2941, in insert
+[Tue May 08 01:08:36.881117 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     check_keys, manipulate, write_concern)
+[Tue May 08 01:08:36.881120 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 631, in _insert
+[Tue May 08 01:08:36.881123 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     blk.ops = [(message._INSERT, doc) for doc in gen()]
+[Tue May 08 01:08:36.881126 2018] [:error] [pid 18241] [client 123.110.25.19:55966]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 609, in gen
+[Tue May 08 01:08:36.881128 2018] [:error] [pid 18241] [client 123.110.25.19:55966]     for doc in docs:
+[Tue May 08 01:08:36.881131 2018] [:error] [pid 18241] [client 123.110.25.19:55966] TypeError: 'Response' object is not iterable
+[Tue May 08 01:08:52.905795 2018] [:error] [pid 18305] [client 123.110.25.19:55969] [2018-05-08 01:08:52,904] ERROR in app: Exception on /test/ [POST]
+[Tue May 08 01:08:52.905825 2018] [:error] [pid 18305] [client 123.110.25.19:55969] Traceback (most recent call last):
+[Tue May 08 01:08:52.905830 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue May 08 01:08:52.905833 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     response = self.full_dispatch_request()
+[Tue May 08 01:08:52.905837 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue May 08 01:08:52.905840 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     rv = self.handle_user_exception(e)
+[Tue May 08 01:08:52.905843 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue May 08 01:08:52.905846 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     reraise(exc_type, exc_value, tb)
+[Tue May 08 01:08:52.905849 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue May 08 01:08:52.905852 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     rv = self.dispatch_request()
+[Tue May 08 01:08:52.905855 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue May 08 01:08:52.905859 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue May 08 01:08:52.905862 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/var/www/html/location/flaskapp.py", line 39, in api_tasks
+[Tue May 08 01:08:52.905870 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     collection.insert(jsonify(result))
+[Tue May 08 01:08:52.905873 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 2941, in insert
+[Tue May 08 01:08:52.905876 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     check_keys, manipulate, write_concern)
+[Tue May 08 01:08:52.905879 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 631, in _insert
+[Tue May 08 01:08:52.905882 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     blk.ops = [(message._INSERT, doc) for doc in gen()]
+[Tue May 08 01:08:52.905885 2018] [:error] [pid 18305] [client 123.110.25.19:55969]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 609, in gen
+[Tue May 08 01:08:52.905888 2018] [:error] [pid 18305] [client 123.110.25.19:55969]     for doc in docs:
+[Tue May 08 01:08:52.905891 2018] [:error] [pid 18305] [client 123.110.25.19:55969] TypeError: 'Response' object is not iterable
