@@ -3,6 +3,7 @@
 from flask import Flask,abort
 from flask import jsonify
 from flask import request
+import json
 
 from flask_pymongo import PyMongo
 
@@ -30,6 +31,15 @@ def api_setlocation():
     }
     return jsonify(result)
 # 硬體回傳原始資料結束
+
+@app.route('/api_listlocation/')
+def listlocation():
+    col = mongo.db.raw_data
+    output = [];
+    for q in col.find().sort('time',-1).limit(50):
+        output.append({'time':q['time'],'detector_id':q['detector_id']})
+    return jsonify({'result':output})
+
 
 
 
