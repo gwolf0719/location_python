@@ -42,6 +42,8 @@ def api_setlocation():
         mongo.db.locate_list.insert(new_data)
 
     return jsonify(result)
+    return jsonify(result)
+    return jsonify(result)
 # 硬體回傳原始資料結束
 
 @app.route('/api_listlocation/')
