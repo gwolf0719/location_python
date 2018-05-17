@@ -1,6 +1,7 @@
 #coding=utf-8
 #flaskapp.py
 from flask import Flask,abort
+
 from flask import jsonify
 from flask import request
 import json
@@ -16,7 +17,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return 'Hello Flask Apps'
+    return '<b>Hello Flask Apps</b>'
 
 
 # 硬體回傳原始資料開始
@@ -24,51 +25,68 @@ def index():
 def api_setlocation():
     data = request.get_json()
     col = mongo.db.raw_data
+    
     col.insert(data)
     result = {
         'sys_code':'200',
         'sys_msg':'success'
     }
-    #分散存檔
-    detector_id = data.detector_id;
-    time = data.time;
-    for d in data.beacons:
-        new_data = {
-            "beacon_id":d.beacon_id,
-            "beacon_rssi":d.beacon_rssi,
-            "detector_id":detector_id,
-            "time":time,
-        }
-        mongo.db.locate_list.insert(new_data)
 
-    return jsonify(result)
-    return jsonify(result)
+    # 轉換陣列標準資料
+    output = []
+    for d in data['beacons']:
+        data_json = {
+                        'beacon_id':d['beacon_id'],
+                        'beacon_rssi':d['beacon_rssi'],
+                        'detector_id':data['detector_id'],
+                        "time":data['time']
+                    }
+        mongo.db.data_format.insert(data_json)
+        output.append(data_json)
+
+
     return jsonify(result)
 # 硬體回傳原始資料結束
 
+
 @app.route('/api_listlocation/')
 def listlocation():
-    col = mongo.db.raw_data
+    col = mongo.db.data_format
     output = [];
-    for q in col.find().sort('time',-1).limit(50):
+    for q in col.find().sort('time',-1).limit(10):
         output.append({'time':q['time'],'detector_id':q['detector_id']})
     return jsonify({'result':output})
 
 @app.route('/detector_list/')
 def detector_list():
-    col = mongo.db.raw_data
+    col = mongo.db.data_format
     output = [];
-
+    html = ''
     for q in col.aggregate([{"$group" : {"_id" : "$detector_id",'count': {'$sum': 1}}}]):
-        output.append({'detector_id':q['_id'],'sum':q['count']})
-    return jsonify({'result':output})
+        # output.append({'detector_id':q['_id'],'sum':q['count']})
+        html = html + '<li><a href="/detector_beacon_list/'+q['_id']+'/">'+q['_id']+'</a></li>';
+    html = '<ul>'+html+'</ul>';
+    return html
+
+@app.route('/detector_beacon_list/<detector>/')
+def detector_beacon_list(detector):
+    col = mongo.db.data_format
+    output = [];
+    
+    html = ''
+    for d in col.find({'detector_id':detector}).sort('time',-1).limit(10):
+        output.append({'time':d['time'],'beacon_id':d['beacon_id']})
+        html = html + '<li><span>'+d['time']+'</span> | <span>'+d['beacon_id']+'</span></li>';
+    html = '<ul>'+html+'</ul>';
+    # return jsonify({'result':output})
+    return html
 
 @app.route('/beacon_list/')
 def beacon_list():
-    col = mongo.db.raw_data
+    col = mongo.db.data_format
     output = [];
-    for q in col.aggregate([{"$group" : {"_id" : "$beacon_list",'count': {'$sum': 1}}}]):
-        output.append({'beacon_list':q['_id'],'sum':q['count']})
+    for q in col.aggregate([{"$group" : {"_id" : "$beacon_id",'count': {'$sum': 1}}}]):
+        output.append({'beacon_id':q['_id'],'sum':q['count']})
     return jsonify({'result':output})
 
 
