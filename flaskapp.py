@@ -5,7 +5,6 @@ from flask import Flask,abort
 from flask import jsonify
 from flask import request
 import json
-
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -17,7 +16,16 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return '<b>Hello Flask Apps</b>'
+    return '<b>Hello Flask A2pps</b>'
+
+# 設定答案
+@app.route('/api_setans/')
+def set_ans():
+    return "set_ans"
+# 設定 detector
+@app.route('/api_setdetector/')
+def setdetector():
+    return "setdetector"
 
 
 # 硬體回傳原始資料開始
@@ -40,6 +48,7 @@ def api_setlocation():
                         'beacon_rssi':d['beacon_rssi'],
                         'detector_id':data['detector_id'],
                         "time":data['time']
+                        # "block":data['block']
                     }
         mongo.db.data_format.insert(data_json)
         output.append(data_json)
@@ -88,6 +97,13 @@ def beacon_list():
     for q in col.aggregate([{"$group" : {"_id" : "$beacon_id",'count': {'$sum': 1}}}]):
         output.append({'beacon_id':q['_id'],'sum':q['count']})
     return jsonify({'result':output})
+
+@app.route('/learm/')
+def learm():
+    import learm
+    
+    # print learm.learm().head(5)
+    learm.learm().head(5)
 
 
 
