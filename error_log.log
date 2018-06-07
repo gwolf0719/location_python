@@ -1,35 +1,202 @@
-[Tue May 15 16:38:59.042331 2018] [:error] [pid 3115] [client 220.134.123.84:49217] [2018-05-15 16:38:59,041] ERROR in app: Exception on /api_listlocation/ [GET]
-[Tue May 15 16:38:59.042365 2018] [:error] [pid 3115] [client 220.134.123.84:49217] Traceback (most recent call last):
-[Tue May 15 16:38:59.042369 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
-[Tue May 15 16:38:59.042372 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     response = self.full_dispatch_request()
-[Tue May 15 16:38:59.042377 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-[Tue May 15 16:38:59.042380 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     rv = self.handle_user_exception(e)
-[Tue May 15 16:38:59.042383 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-[Tue May 15 16:38:59.042386 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     reraise(exc_type, exc_value, tb)
-[Tue May 15 16:38:59.042389 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-[Tue May 15 16:38:59.042392 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     rv = self.dispatch_request()
-[Tue May 15 16:38:59.042394 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
-[Tue May 15 16:38:59.042397 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     return self.view_functions[rule.endpoint](**req.view_args)
-[Tue May 15 16:38:59.042400 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/var/www/html/location/flaskapp.py", line 42, in listlocation
-[Tue May 15 16:38:59.042403 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     return jsonify({'result':q})
-[Tue May 15 16:38:59.042406 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 321, in jsonify
-[Tue May 15 16:38:59.042409 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     dumps(data, indent=indent, separators=separators) + '\\n',
-[Tue May 15 16:38:59.042412 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 179, in dumps
-[Tue May 15 16:38:59.042415 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     rv = _json.dumps(obj, **kwargs)
-[Tue May 15 16:38:59.042418 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/__init__.py", line 250, in dumps
-[Tue May 15 16:38:59.042420 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     sort_keys=sort_keys, **kw).encode(obj)
-[Tue May 15 16:38:59.042423 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 209, in encode
-[Tue May 15 16:38:59.042426 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     chunks = list(chunks)
-[Tue May 15 16:38:59.042429 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 434, in _iterencode
-[Tue May 15 16:38:59.042432 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     for chunk in _iterencode_dict(o, _current_indent_level):
-[Tue May 15 16:38:59.042435 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 408, in _iterencode_dict
-[Tue May 15 16:38:59.042438 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     for chunk in chunks:
-[Tue May 15 16:38:59.042449 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 408, in _iterencode_dict
-[Tue May 15 16:38:59.042452 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     for chunk in chunks:
-[Tue May 15 16:38:59.042455 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 442, in _iterencode
-[Tue May 15 16:38:59.042462 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     o = _default(o)
-[Tue May 15 16:38:59.042466 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/site-packages/flask/json/__init__.py", line 81, in default
-[Tue May 15 16:38:59.042469 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     return _json.JSONEncoder.default(self, o)
-[Tue May 15 16:38:59.042472 2018] [:error] [pid 3115] [client 220.134.123.84:49217]   File "/usr/lib64/python2.7/json/encoder.py", line 184, in default
-[Tue May 15 16:38:59.042474 2018] [:error] [pid 3115] [client 220.134.123.84:49217]     raise TypeError(repr(o) + " is not JSON serializable")
-[Tue May 15 16:38:59.042477 2018] [:error] [pid 3115] [client 220.134.123.84:49217] TypeError: ObjectId('5afa5e9a584b1273c998c072') is not JSON serializable
+[Thu Jun 07 17:58:51.672768 2018] [:error] [pid 17542] [client 220.134.123.84:52973] [2018-06-07 17:58:51,671] ERROR in app: Exception on /learm/set_detetor/ [POST]
+[Thu Jun 07 17:58:51.672798 2018] [:error] [pid 17542] [client 220.134.123.84:52973] Traceback (most recent call last):
+[Thu Jun 07 17:58:51.672801 2018] [:error] [pid 17542] [client 220.134.123.84:52973]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Thu Jun 07 17:58:51.672805 2018] [:error] [pid 17542] [client 220.134.123.84:52973]     response = self.full_dispatch_request()
+[Thu Jun 07 17:58:51.672808 2018] [:error] [pid 17542] [client 220.134.123.84:52973]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Thu Jun 07 17:58:51.672811 2018] [:error] [pid 17542] [client 220.134.123.84:52973]     return self.finalize_request(rv)
+[Thu Jun 07 17:58:51.672813 2018] [:error] [pid 17542] [client 220.134.123.84:52973]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Thu Jun 07 17:58:51.672816 2018] [:error] [pid 17542] [client 220.134.123.84:52973]     response = self.make_response(rv)
+[Thu Jun 07 17:58:51.672819 2018] [:error] [pid 17542] [client 220.134.123.84:52973]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Thu Jun 07 17:58:51.672822 2018] [:error] [pid 17542] [client 220.134.123.84:52973]     'The view function did not return a valid response. The'
+[Thu Jun 07 17:58:51.672825 2018] [:error] [pid 17542] [client 220.134.123.84:52973] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Thu Jun 07 17:59:54.636332 2018] [:error] [pid 17541] [client 220.134.123.84:52976] [2018-06-07 17:59:54,635] ERROR in app: Exception on /learm/set_detetor/ [POST]
+[Thu Jun 07 17:59:54.636351 2018] [:error] [pid 17541] [client 220.134.123.84:52976] Traceback (most recent call last):
+[Thu Jun 07 17:59:54.636356 2018] [:error] [pid 17541] [client 220.134.123.84:52976]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Thu Jun 07 17:59:54.636360 2018] [:error] [pid 17541] [client 220.134.123.84:52976]     response = self.full_dispatch_request()
+[Thu Jun 07 17:59:54.636364 2018] [:error] [pid 17541] [client 220.134.123.84:52976]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+[Thu Jun 07 17:59:54.636368 2018] [:error] [pid 17541] [client 220.134.123.84:52976]     return self.finalize_request(rv)
+[Thu Jun 07 17:59:54.636372 2018] [:error] [pid 17541] [client 220.134.123.84:52976]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+[Thu Jun 07 17:59:54.636376 2018] [:error] [pid 17541] [client 220.134.123.84:52976]     response = self.make_response(rv)
+[Thu Jun 07 17:59:54.636379 2018] [:error] [pid 17541] [client 220.134.123.84:52976]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1957, in make_response
+[Thu Jun 07 17:59:54.636383 2018] [:error] [pid 17541] [client 220.134.123.84:52976]     'The view function did not return a valid response. The'
+[Thu Jun 07 17:59:54.636387 2018] [:error] [pid 17541] [client 220.134.123.84:52976] TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+[Thu Jun 07 18:04:02.815770 2018] [:error] [pid 17959] [client 220.134.123.84:52983] mod_wsgi (pid=17959): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:02.815819 2018] [:error] [pid 17959] [client 220.134.123.84:52983] mod_wsgi (pid=17959): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:02.815845 2018] [:error] [pid 17959] [client 220.134.123.84:52983] Traceback (most recent call last):
+[Thu Jun 07 18:04:02.815864 2018] [:error] [pid 17959] [client 220.134.123.84:52983]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:02.815926 2018] [:error] [pid 17959] [client 220.134.123.84:52983]     from flaskapp import app as application
+[Thu Jun 07 18:04:02.815946 2018] [:error] [pid 17959] [client 220.134.123.84:52983]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:02.815994 2018] [:error] [pid 17959] [client 220.134.123.84:52983]     import learm
+[Thu Jun 07 18:04:02.816029 2018] [:error] [pid 17959] [client 220.134.123.84:52983]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:02.816035 2018] [:error] [pid 17959] [client 220.134.123.84:52983]     except print(0):
+[Thu Jun 07 18:04:02.816038 2018] [:error] [pid 17959] [client 220.134.123.84:52983]                ^
+[Thu Jun 07 18:04:02.816042 2018] [:error] [pid 17959] [client 220.134.123.84:52983] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:08.704570 2018] [:error] [pid 17960] [client 220.134.156.25:64269] mod_wsgi (pid=17960): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:08.704618 2018] [:error] [pid 17960] [client 220.134.156.25:64269] mod_wsgi (pid=17960): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:08.704646 2018] [:error] [pid 17960] [client 220.134.156.25:64269] Traceback (most recent call last):
+[Thu Jun 07 18:04:08.704665 2018] [:error] [pid 17960] [client 220.134.156.25:64269]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:08.704726 2018] [:error] [pid 17960] [client 220.134.156.25:64269]     from flaskapp import app as application
+[Thu Jun 07 18:04:08.704736 2018] [:error] [pid 17960] [client 220.134.156.25:64269]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:08.704783 2018] [:error] [pid 17960] [client 220.134.156.25:64269]     import learm
+[Thu Jun 07 18:04:08.704819 2018] [:error] [pid 17960] [client 220.134.156.25:64269]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:08.704824 2018] [:error] [pid 17960] [client 220.134.156.25:64269]     except print(0):
+[Thu Jun 07 18:04:08.704828 2018] [:error] [pid 17960] [client 220.134.156.25:64269]                ^
+[Thu Jun 07 18:04:08.704831 2018] [:error] [pid 17960] [client 220.134.156.25:64269] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:09.215039 2018] [:error] [pid 17962] [client 220.134.156.25:64270] mod_wsgi (pid=17962): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:09.215086 2018] [:error] [pid 17962] [client 220.134.156.25:64270] mod_wsgi (pid=17962): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:09.215113 2018] [:error] [pid 17962] [client 220.134.156.25:64270] Traceback (most recent call last):
+[Thu Jun 07 18:04:09.215132 2018] [:error] [pid 17962] [client 220.134.156.25:64270]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:09.215195 2018] [:error] [pid 17962] [client 220.134.156.25:64270]     from flaskapp import app as application
+[Thu Jun 07 18:04:09.215205 2018] [:error] [pid 17962] [client 220.134.156.25:64270]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:09.215253 2018] [:error] [pid 17962] [client 220.134.156.25:64270]     import learm
+[Thu Jun 07 18:04:09.215288 2018] [:error] [pid 17962] [client 220.134.156.25:64270]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:09.215294 2018] [:error] [pid 17962] [client 220.134.156.25:64270]     except print(0):
+[Thu Jun 07 18:04:09.215297 2018] [:error] [pid 17962] [client 220.134.156.25:64270]                ^
+[Thu Jun 07 18:04:09.215301 2018] [:error] [pid 17962] [client 220.134.156.25:64270] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:09.684478 2018] [:error] [pid 17958] [client 220.134.156.25:64271] mod_wsgi (pid=17958): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:09.684532 2018] [:error] [pid 17958] [client 220.134.156.25:64271] mod_wsgi (pid=17958): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:09.684590 2018] [:error] [pid 17958] [client 220.134.156.25:64271] Traceback (most recent call last):
+[Thu Jun 07 18:04:09.684612 2018] [:error] [pid 17958] [client 220.134.156.25:64271]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:09.684673 2018] [:error] [pid 17958] [client 220.134.156.25:64271]     from flaskapp import app as application
+[Thu Jun 07 18:04:09.684683 2018] [:error] [pid 17958] [client 220.134.156.25:64271]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:09.684729 2018] [:error] [pid 17958] [client 220.134.156.25:64271]     import learm
+[Thu Jun 07 18:04:09.684763 2018] [:error] [pid 17958] [client 220.134.156.25:64271]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:09.684769 2018] [:error] [pid 17958] [client 220.134.156.25:64271]     except print(0):
+[Thu Jun 07 18:04:09.684772 2018] [:error] [pid 17958] [client 220.134.156.25:64271]                ^
+[Thu Jun 07 18:04:09.684776 2018] [:error] [pid 17958] [client 220.134.156.25:64271] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:19.815844 2018] [:error] [pid 17961] [client 220.134.156.25:64272] mod_wsgi (pid=17961): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:19.815900 2018] [:error] [pid 17961] [client 220.134.156.25:64272] mod_wsgi (pid=17961): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:19.815934 2018] [:error] [pid 17961] [client 220.134.156.25:64272] Traceback (most recent call last):
+[Thu Jun 07 18:04:19.815958 2018] [:error] [pid 17961] [client 220.134.156.25:64272]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:19.816022 2018] [:error] [pid 17961] [client 220.134.156.25:64272]     from flaskapp import app as application
+[Thu Jun 07 18:04:19.816032 2018] [:error] [pid 17961] [client 220.134.156.25:64272]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:19.816079 2018] [:error] [pid 17961] [client 220.134.156.25:64272]     import learm
+[Thu Jun 07 18:04:19.816115 2018] [:error] [pid 17961] [client 220.134.156.25:64272]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:19.816120 2018] [:error] [pid 17961] [client 220.134.156.25:64272]     except print(0):
+[Thu Jun 07 18:04:19.816124 2018] [:error] [pid 17961] [client 220.134.156.25:64272]                ^
+[Thu Jun 07 18:04:19.816128 2018] [:error] [pid 17961] [client 220.134.156.25:64272] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:20.303894 2018] [:error] [pid 17971] [client 220.134.156.25:64273] mod_wsgi (pid=17971): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:20.303936 2018] [:error] [pid 17971] [client 220.134.156.25:64273] mod_wsgi (pid=17971): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:20.303961 2018] [:error] [pid 17971] [client 220.134.156.25:64273] Traceback (most recent call last):
+[Thu Jun 07 18:04:20.303980 2018] [:error] [pid 17971] [client 220.134.156.25:64273]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:20.304038 2018] [:error] [pid 17971] [client 220.134.156.25:64273]     from flaskapp import app as application
+[Thu Jun 07 18:04:20.304048 2018] [:error] [pid 17971] [client 220.134.156.25:64273]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:20.304095 2018] [:error] [pid 17971] [client 220.134.156.25:64273]     import learm
+[Thu Jun 07 18:04:20.304129 2018] [:error] [pid 17971] [client 220.134.156.25:64273]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:20.304134 2018] [:error] [pid 17971] [client 220.134.156.25:64273]     except print(0):
+[Thu Jun 07 18:04:20.304138 2018] [:error] [pid 17971] [client 220.134.156.25:64273]                ^
+[Thu Jun 07 18:04:20.304151 2018] [:error] [pid 17971] [client 220.134.156.25:64273] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:20.636407 2018] [:error] [pid 17959] [client 220.134.156.25:64274] mod_wsgi (pid=17959): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:20.636444 2018] [:error] [pid 17959] [client 220.134.156.25:64274] mod_wsgi (pid=17959): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:20.636466 2018] [:error] [pid 17959] [client 220.134.156.25:64274] Traceback (most recent call last):
+[Thu Jun 07 18:04:20.636489 2018] [:error] [pid 17959] [client 220.134.156.25:64274]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:20.636522 2018] [:error] [pid 17959] [client 220.134.156.25:64274]     from flaskapp import app as application
+[Thu Jun 07 18:04:20.636530 2018] [:error] [pid 17959] [client 220.134.156.25:64274]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:20.636569 2018] [:error] [pid 17959] [client 220.134.156.25:64274]     import learm
+[Thu Jun 07 18:04:20.636624 2018] [:error] [pid 17959] [client 220.134.156.25:64274]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:20.636630 2018] [:error] [pid 17959] [client 220.134.156.25:64274]     except print(0):
+[Thu Jun 07 18:04:20.636634 2018] [:error] [pid 17959] [client 220.134.156.25:64274]                ^
+[Thu Jun 07 18:04:20.636638 2018] [:error] [pid 17959] [client 220.134.156.25:64274] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:30.101532 2018] [:error] [pid 17960] [client 220.134.156.25:64275] mod_wsgi (pid=17960): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:30.101599 2018] [:error] [pid 17960] [client 220.134.156.25:64275] mod_wsgi (pid=17960): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:30.101627 2018] [:error] [pid 17960] [client 220.134.156.25:64275] Traceback (most recent call last):
+[Thu Jun 07 18:04:30.101651 2018] [:error] [pid 17960] [client 220.134.156.25:64275]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:30.101687 2018] [:error] [pid 17960] [client 220.134.156.25:64275]     from flaskapp import app as application
+[Thu Jun 07 18:04:30.101696 2018] [:error] [pid 17960] [client 220.134.156.25:64275]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:30.101709 2018] [:error] [pid 17960] [client 220.134.156.25:64275]     import learm
+[Thu Jun 07 18:04:30.101752 2018] [:error] [pid 17960] [client 220.134.156.25:64275]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:30.101758 2018] [:error] [pid 17960] [client 220.134.156.25:64275]     except print(0):
+[Thu Jun 07 18:04:30.101762 2018] [:error] [pid 17960] [client 220.134.156.25:64275]                ^
+[Thu Jun 07 18:04:30.101766 2018] [:error] [pid 17960] [client 220.134.156.25:64275] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:39.639711 2018] [:error] [pid 17962] [client 220.134.156.25:64276] mod_wsgi (pid=17962): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:39.639766 2018] [:error] [pid 17962] [client 220.134.156.25:64276] mod_wsgi (pid=17962): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:39.639847 2018] [:error] [pid 17962] [client 220.134.156.25:64276] Traceback (most recent call last):
+[Thu Jun 07 18:04:39.639885 2018] [:error] [pid 17962] [client 220.134.156.25:64276]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:39.639928 2018] [:error] [pid 17962] [client 220.134.156.25:64276]     from flaskapp import app as application
+[Thu Jun 07 18:04:39.639939 2018] [:error] [pid 17962] [client 220.134.156.25:64276]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:39.639953 2018] [:error] [pid 17962] [client 220.134.156.25:64276]     import learm
+[Thu Jun 07 18:04:39.640009 2018] [:error] [pid 17962] [client 220.134.156.25:64276]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:39.640015 2018] [:error] [pid 17962] [client 220.134.156.25:64276]     except print(0):
+[Thu Jun 07 18:04:39.640019 2018] [:error] [pid 17962] [client 220.134.156.25:64276]                ^
+[Thu Jun 07 18:04:39.640023 2018] [:error] [pid 17962] [client 220.134.156.25:64276] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:40.593153 2018] [:error] [pid 17958] [client 220.134.156.25:64277] mod_wsgi (pid=17958): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:40.593191 2018] [:error] [pid 17958] [client 220.134.156.25:64277] mod_wsgi (pid=17958): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:40.593217 2018] [:error] [pid 17958] [client 220.134.156.25:64277] Traceback (most recent call last):
+[Thu Jun 07 18:04:40.593241 2018] [:error] [pid 17958] [client 220.134.156.25:64277]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:40.593275 2018] [:error] [pid 17958] [client 220.134.156.25:64277]     from flaskapp import app as application
+[Thu Jun 07 18:04:40.593307 2018] [:error] [pid 17958] [client 220.134.156.25:64277]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:40.593332 2018] [:error] [pid 17958] [client 220.134.156.25:64277]     import learm
+[Thu Jun 07 18:04:40.593384 2018] [:error] [pid 17958] [client 220.134.156.25:64277]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:40.593391 2018] [:error] [pid 17958] [client 220.134.156.25:64277]     except print(0):
+[Thu Jun 07 18:04:40.593395 2018] [:error] [pid 17958] [client 220.134.156.25:64277]                ^
+[Thu Jun 07 18:04:40.593399 2018] [:error] [pid 17958] [client 220.134.156.25:64277] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:40.950392 2018] [:error] [pid 17961] [client 220.134.156.25:64278] mod_wsgi (pid=17961): Target WSGI script '/var/www/html/location/flaskapp.wsgi' cannot be loaded as Python module.
+[Thu Jun 07 18:04:40.950431 2018] [:error] [pid 17961] [client 220.134.156.25:64278] mod_wsgi (pid=17961): Exception occurred processing WSGI script '/var/www/html/location/flaskapp.wsgi'.
+[Thu Jun 07 18:04:40.950455 2018] [:error] [pid 17961] [client 220.134.156.25:64278] Traceback (most recent call last):
+[Thu Jun 07 18:04:40.950479 2018] [:error] [pid 17961] [client 220.134.156.25:64278]   File "/var/www/html/location/flaskapp.wsgi", line 3, in <module>
+[Thu Jun 07 18:04:40.950512 2018] [:error] [pid 17961] [client 220.134.156.25:64278]     from flaskapp import app as application
+[Thu Jun 07 18:04:40.950521 2018] [:error] [pid 17961] [client 220.134.156.25:64278]   File "/var/www/html/location/flaskapp.py", line 10, in <module>
+[Thu Jun 07 18:04:40.950534 2018] [:error] [pid 17961] [client 220.134.156.25:64278]     import learm
+[Thu Jun 07 18:04:40.950613 2018] [:error] [pid 17961] [client 220.134.156.25:64278]   File "/var/www/html/location/learm.py", line 25
+[Thu Jun 07 18:04:40.950624 2018] [:error] [pid 17961] [client 220.134.156.25:64278]     except print(0):
+[Thu Jun 07 18:04:40.950628 2018] [:error] [pid 17961] [client 220.134.156.25:64278]                ^
+[Thu Jun 07 18:04:40.950633 2018] [:error] [pid 17961] [client 220.134.156.25:64278] SyntaxError: invalid syntax
+[Thu Jun 07 18:04:50.108081 2018] [:error] [pid 18030] [client 220.134.123.84:52984] [2018-06-07 18:04:50,105] ERROR in app: Exception on /learm/set_detetor/ [POST]
+[Thu Jun 07 18:04:50.108117 2018] [:error] [pid 18030] [client 220.134.123.84:52984] Traceback (most recent call last):
+[Thu Jun 07 18:04:50.108124 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Thu Jun 07 18:04:50.108128 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     response = self.full_dispatch_request()
+[Thu Jun 07 18:04:50.108144 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Thu Jun 07 18:04:50.108149 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     rv = self.handle_user_exception(e)
+[Thu Jun 07 18:04:50.108153 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Thu Jun 07 18:04:50.108158 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     reraise(exc_type, exc_value, tb)
+[Thu Jun 07 18:04:50.108162 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Thu Jun 07 18:04:50.108167 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     rv = self.dispatch_request()
+[Thu Jun 07 18:04:50.108172 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Thu Jun 07 18:04:50.108176 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Jun 07 18:04:50.108181 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/var/www/html/location/flaskapp.py", line 31, in set_detetor
+[Thu Jun 07 18:04:50.108186 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     res = learm.set_detetor(ids);
+[Thu Jun 07 18:04:50.108191 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/var/www/html/location/learm.py", line 23, in set_detetor
+[Thu Jun 07 18:04:50.108195 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     col.insert(data);
+[Thu Jun 07 18:04:50.108199 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 2941, in insert
+[Thu Jun 07 18:04:50.108204 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     check_keys, manipulate, write_concern)
+[Thu Jun 07 18:04:50.108209 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 631, in _insert
+[Thu Jun 07 18:04:50.108213 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     blk.ops = [(message._INSERT, doc) for doc in gen()]
+[Thu Jun 07 18:04:50.108218 2018] [:error] [pid 18030] [client 220.134.123.84:52984]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 615, in gen
+[Thu Jun 07 18:04:50.108222 2018] [:error] [pid 18030] [client 220.134.123.84:52984]     doc['_id'] = ObjectId()
+[Thu Jun 07 18:04:50.108227 2018] [:error] [pid 18030] [client 220.134.123.84:52984] TypeError: 'unicode' object does not support item assignment
+[Thu Jun 07 18:05:45.371136 2018] [:error] [pid 18144] [client 220.134.123.84:52988] [2018-06-07 18:05:45,369] ERROR in app: Exception on /learm/set_detetor/ [POST]
+[Thu Jun 07 18:05:45.371166 2018] [:error] [pid 18144] [client 220.134.123.84:52988] Traceback (most recent call last):
+[Thu Jun 07 18:05:45.371170 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Thu Jun 07 18:05:45.371174 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     response = self.full_dispatch_request()
+[Thu Jun 07 18:05:45.371178 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Thu Jun 07 18:05:45.371181 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     rv = self.handle_user_exception(e)
+[Thu Jun 07 18:05:45.371185 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Thu Jun 07 18:05:45.371188 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     reraise(exc_type, exc_value, tb)
+[Thu Jun 07 18:05:45.371191 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Thu Jun 07 18:05:45.371201 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     rv = self.dispatch_request()
+[Thu Jun 07 18:05:45.371204 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Thu Jun 07 18:05:45.371207 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Jun 07 18:05:45.371210 2018] [:error] [pid 18144] [client 220.134.123.84:52988]   File "/var/www/html/location/flaskapp.py", line 29, in set_detetor
+[Thu Jun 07 18:05:45.371213 2018] [:error] [pid 18144] [client 220.134.123.84:52988]     col.insert(d);
+[Thu Jun 07 18:05:45.371216 2018] [:error] [pid 18144] [client 220.134.123.84:52988] NameError: global name 'col' is not defined
+[Thu Jun 07 18:06:37.698037 2018] [:error] [pid 18258] [client 220.134.123.84:52989] [2018-06-07 18:06:37,696] ERROR in app: Exception on /learm/set_detetor/ [POST]
+[Thu Jun 07 18:06:37.698066 2018] [:error] [pid 18258] [client 220.134.123.84:52989] Traceback (most recent call last):
+[Thu Jun 07 18:06:37.698070 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Thu Jun 07 18:06:37.698074 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     response = self.full_dispatch_request()
+[Thu Jun 07 18:06:37.698078 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Thu Jun 07 18:06:37.698081 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     rv = self.handle_user_exception(e)
+[Thu Jun 07 18:06:37.698085 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Thu Jun 07 18:06:37.698088 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     reraise(exc_type, exc_value, tb)
+[Thu Jun 07 18:06:37.698091 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Thu Jun 07 18:06:37.698095 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     rv = self.dispatch_request()
+[Thu Jun 07 18:06:37.698098 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Thu Jun 07 18:06:37.698101 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Jun 07 18:06:37.698105 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/var/www/html/location/flaskapp.py", line 30, in set_detetor
+[Thu Jun 07 18:06:37.698108 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     mongo.db.detetors.insert(d);
+[Thu Jun 07 18:06:37.698111 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 2941, in insert
+[Thu Jun 07 18:06:37.698114 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     check_keys, manipulate, write_concern)
+[Thu Jun 07 18:06:37.698118 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 631, in _insert
+[Thu Jun 07 18:06:37.698121 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     blk.ops = [(message._INSERT, doc) for doc in gen()]
+[Thu Jun 07 18:06:37.698124 2018] [:error] [pid 18258] [client 220.134.123.84:52989]   File "/usr/lib64/python2.7/site-packages/pymongo/collection.py", line 615, in gen
+[Thu Jun 07 18:06:37.698127 2018] [:error] [pid 18258] [client 220.134.123.84:52989]     doc['_id'] = ObjectId()
+[Thu Jun 07 18:06:37.698131 2018] [:error] [pid 18258] [client 220.134.123.84:52989] TypeError: 'unicode' object does not support item assignment

@@ -7,6 +7,8 @@ from flask import request
 import json
 from flask_pymongo import PyMongo
 
+import learm
+
 app = Flask(__name__)
 
 app.config['MONGO_HOST'] = 'localhost'
@@ -18,14 +20,22 @@ mongo = PyMongo(app)
 def index():
     return '<b>Hello Flask A2pps</b>'
 
-# 設定答案
-@app.route('/api_setans/')
-def set_ans():
-    return "set_ans"
-# 設定 detector
-@app.route('/api_setdetector/')
-def setdetector():
-    return "setdetector"
+
+@app.route('/learm/set_detetor/',methods=['POST'])
+def set_detetor():
+    data = request.get_json();
+    mongo.db.drop_collection('detetors');
+    ids = []
+    for d in data['detetor_ids']:
+        mongo.db.detetors.insert(d);
+        ids.append(d);
+   
+    # res = learm.set_detetor(ids);
+    return jsonify(ids);
+    
+    # print learm.learm().head(5)
+    # learm.learm().head(5)
+
 
 
 # 硬體回傳原始資料開始
@@ -98,12 +108,6 @@ def beacon_list():
         output.append({'beacon_id':q['_id'],'sum':q['count']})
     return jsonify({'result':output})
 
-@app.route('/learm/')
-def learm():
-    import learm
-    
-    # print learm.learm().head(5)
-    learm.learm().head(5)
 
 
 
