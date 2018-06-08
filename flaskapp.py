@@ -21,20 +21,28 @@ def index():
     return '<b>Hello Flask A2pps</b>'
 
 
+# 設定 detetor
 @app.route('/learm/set_detetor/',methods=['POST'])
 def set_detetor():
     data = request.get_json();
-    mongo.db.drop_collection('detetors');
-    ids = []
-    for d in data['detetor_ids']:
-        mongo.db.detetors.insert(d);
-        ids.append(d);
-   
-    # res = learm.set_detetor(ids);
-    return jsonify(ids);
+    # 將detetor id 寫入
+    learm.set_detetor(data);
+    data_list = [];
+    # 取回 detetors
+    data_list = learm.detetors();
+    return jsonify(data_list)
     
-    # print learm.learm().head(5)
-    # learm.learm().head(5)
+# 設定答案 beacon_id,block
+@app.route('/learm/set_ans/',methods=['POST'])
+def set_ans():
+    data = request.get_json();
+    # 將detetor id 寫入
+    learm.set_ans(data);
+    data_list = [];
+    # 取回 detetors
+    data_list = learm.ans_list();
+    return jsonify(data_list)
+    
 
 
 
