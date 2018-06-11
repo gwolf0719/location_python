@@ -6,7 +6,7 @@ from flask import jsonify
 from flask import request
 import json
 from flask_pymongo import PyMongo
-
+import time
 import learm
 
 app = Flask(__name__)
@@ -21,27 +21,48 @@ def index():
     return '<b>Hello Flask A2pps</b>'
 
 
-# 設定 detetor
-@app.route('/learm/set_detetor/',methods=['POST'])
-def set_detetor():
+# 設定 detector
+@app.route('/learm/set_detector/',methods=['POST'])
+def set_detector():
     data = request.get_json();
-    # 將detetor id 寫入
-    learm.set_detetor(data);
+    # 將detector id 寫入
+    learm.set_detector(data);
     data_list = [];
-    # 取回 detetors
-    data_list = learm.detetors();
+    # 取回 detectors
+    data_list = learm.detectors();
     return jsonify(data_list)
     
 # 設定答案 beacon_id,block
 @app.route('/learm/set_ans/',methods=['POST'])
 def set_ans():
     data = request.get_json();
-    # 將detetor id 寫入
+    # 將detector id 寫入
     learm.set_ans(data);
     data_list = [];
-    # 取回 detetors
+    # 取回 detectors
     data_list = learm.ans_list();
     return jsonify(data_list)
+
+# 送題庫
+@app.route('/learm/send_question_bank/',methods=['POST'])
+def send_question_bank():
+    data = request.get_json();
+    
+    res = []
+    detectors = learm.detectors();
+    if data['detector_id'] in detectors:
+        res.append({'has':True});
+    
+    
+    res.append({'detectors':detectors});
+    res.append({'time':str(int(time.time()/10))});
+    
+    return jsonify(res)
+        
+                
+    
+
+
     
 
 

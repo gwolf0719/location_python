@@ -15,21 +15,21 @@ app = Flask(__name__)
 mongo = PyMongo(app)
 
 
-# 設定 detetor 列表
-def set_detetor(data):
-    mongo.db.drop_collection('detetors');
+# 設定 detector 列表
+def set_detector(data):
+    mongo.db.drop_collection('detectors');
     ids = []
-    for d in data['detetor_ids']:
+    for d in data['detector_ids']:
         data_json = {
-                        'detetor_id':d
+                        'detector_id':d
                     }
-        mongo.db.detetors.insert(data_json);
+        mongo.db.detectors.insert(data_json);
     return True
 
-def detetors():
+def detectors():
     data_list = []
-    for dat in mongo.db.detetors.find():
-        data_list.append(dat['detetor_id'])
+    for dat in mongo.db.detectors.find():
+        data_list.append(dat['detector_id'])
     return data_list;
 
 # 設定答案
