@@ -47,16 +47,37 @@ def set_ans():
 @app.route('/learm/send_question_bank/',methods=['POST'])
 def send_question_bank():
     data = request.get_json();
-    
+    time_key = str(int(time.time()/10));
     res = []
     detectors = learm.detectors();
+    # 檢查  detector_id 存在
+    beacon_bank = []
+    source = []
     if data['detector_id'] in detectors:
-        res.append({'has':True});
+        # 檢查題庫中資料有沒有這個 beacon_id
+        for beacon in data['beacons']:
+            source = learm.chk_question_bank(beacon['beacon_id'],time_key)
+            beacon_bank_json = {
+                "beacon_id":beacon['beacon_id'],
+                "time_key":time_key
+            }
+            update = {
+                data['detector_id'] : beacon['beacon_rssi']
+            }
+
+            # 更新數據
+            mongo.db.question_bank.update_one(beacon_bank_json,{'$set':update});
+            
+
     
-    
+    # res.append(source);
+    res.append({'beacon_bank':beacon_bank});
     res.append({'detectors':detectors});
-    res.append({'time':str(int(time.time()/10))});
-    
+    res.append({'time':time_key});
+    # qlist = mongo.db.question_bank.find();
+    # res.append({'qlist':qlist})
+
+
     return jsonify(res)
         
                 

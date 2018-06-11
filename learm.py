@@ -53,6 +53,31 @@ def ans_list():
         data_list.append(data)
     return data_list;
 
+# 檢查題庫中有沒有值
+def chk_question_bank(beacon_id,time_key):
+    data = {
+        "beacon_id":beacon_id,
+        "time_key":time_key
+    }
+    count = mongo.db.question_bank.find(data).count()
+    if count == 0 :
+        ins_question_bank(beacon_id,time_key);
+    
+    return True
+
+def ins_question_bank(beacon_id,time_key):
+    data = {}
+    for dat in mongo.db.detectors.find():
+        data[dat['detector_id']] = -9999;
+        
+        
+    data['beacon_id'] = beacon_id
+    data['time_key'] = time_key
+    
+
+    mongo.db.question_bank.insert(data);
+    return True;
+
 
 def learm():
     
