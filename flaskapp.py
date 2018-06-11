@@ -66,7 +66,8 @@ def send_question_bank():
             }
 
             # 更新數據
-            mongo.db.question_bank.update_one(beacon_bank_json,{'$set':update});
+            if source == True:
+                mongo.db.question_bank.update_one(beacon_bank_json,{'$set':update});
             
 
     

@@ -52,6 +52,13 @@ def ans_list():
                 }
         data_list.append(data)
     return data_list;
+def get_block(beacon_id):
+    
+    if mongo.db.ans.find({"beacon_id":beacon_id}).count() == 0:
+        return False;
+    else:
+        data = mongo.db.ans.find_one({"beacon_id":beacon_id})
+        return data['block'];
 
 # 檢查題庫中有沒有值
 def chk_question_bank(beacon_id,time_key):
@@ -61,22 +68,26 @@ def chk_question_bank(beacon_id,time_key):
     }
     count = mongo.db.question_bank.find(data).count()
     if count == 0 :
-        ins_question_bank(beacon_id,time_key);
-    
-    return True
+        ins = ins_question_bank(beacon_id,time_key);
+        return ins;
+    else:
+        return True
 
 def ins_question_bank(beacon_id,time_key):
     data = {}
-    for dat in mongo.db.detectors.find():
-        data[dat['detector_id']] = -9999;
+    data['block'] = get_block(beacon_id)
+    if data['block'] == False:
+        return False;
+    else:
+        for dat in mongo.db.detectors.find():
+            data[dat['detector_id']] = -9999;
         
-        
-    data['beacon_id'] = beacon_id
-    data['time_key'] = time_key
-    
+        data['beacon_id'] = beacon_id
+        data['time_key'] = time_key
+        mongo.db.question_bank.insert(data);
+        return True; 
 
-    mongo.db.question_bank.insert(data);
-    return True;
+    
 
 
 def learm():
