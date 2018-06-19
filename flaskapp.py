@@ -83,8 +83,14 @@ def send_question_bank():
         
                 
     
-
-
+@app.route('/beacon_bank_switch/',methods=['GET'])
+def beacon_bank_switch():
+    switch = request.args.get('switch');
+    file_path = '/var/www/html/location/switch.conf';
+    f = open(file_path,'w+')
+    f.write(switch);
+    f = open(file_path,'r');
+    return f.read();
     
 
 
