@@ -53,21 +53,27 @@ def send_question_bank():
     # 檢查  detector_id 存在
     beacon_bank = []
     source = []
-    if data['detector_id'] in detectors:
-        # 檢查題庫中資料有沒有這個 beacon_id
-        for beacon in data['beacons']:
-            source = learm.chk_question_bank(beacon['beacon_id'],time_key)
-            beacon_bank_json = {
-                "beacon_id":beacon['beacon_id'],
-                "time_key":time_key
-            }
-            update = {
-                data['detector_id'] : beacon['beacon_rssi']
-            }
 
-            # 更新數據
-            if source == True:
-                mongo.db.question_bank.update_one(beacon_bank_json,{'$set':update});
+    # 檢查switch狀態
+    switch_file_path = '/var/www/html/location/switch.conf';
+    switch = open(switch_file_path,'r');
+
+    if switch.read == 'on': 
+        if data['detector_id'] in detectors:
+            # 檢查題庫中資料有沒有這個 beacon_id
+            for beacon in data['beacons']:
+                source = learm.chk_question_bank(beacon['beacon_id'],time_key)
+                beacon_bank_json = {
+                    "beacon_id":beacon['beacon_id'],
+                    "time_key":time_key
+                }
+                update = {
+                    data['detector_id'] : beacon['beacon_rssi']
+                }
+
+                # 更新數據
+                if source == True:
+                    mongo.db.question_bank.update_one(beacon_bank_json,{'$set':update});
             
 
     
