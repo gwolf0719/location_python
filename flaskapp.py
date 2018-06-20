@@ -9,6 +9,15 @@ from flask_pymongo import PyMongo
 import time
 import learm
 
+import pandas as pd
+import tensorflow as tf
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+# from sklearn import datasets
+
+
+
 app = Flask(__name__)
 
 app.config['MONGO_HOST'] = 'localhost'
@@ -20,6 +29,27 @@ mongo = PyMongo(app)
 def index():
     return '<b>Hello Flask A2pps</b>'
 
+
+# @app.route('/do_learm/')
+# def do_learm():
+#     dbdata = mongo.db.question_bank.find();
+
+#     detectors = learm.detectors();
+#     X_train, X_test, y_train, y_test = train_test_split(detectors, dataframe[['block']], test_size=0.3, random_state=0)
+
+#     from sklearn.tree import DecisionTreeClassifier
+#     tree = DecisionTreeClassifier(criterion='entropy', max_depth=30, random_state=0)
+#     tree.fit(X_train, y_train)
+#     tree.predict(X_test)
+#     y_test['room'].values
+#     error = 0
+#     for i, v in enumerate(tree.predict(X_test)):
+#         if v != y_test['room'].values[i]:
+#             print(i, v)
+#             error += 1
+#     print(error)
+#     tree.score(X_test, y_test['room'])
+#     print(i);
 
 # 設定 detector
 @app.route('/learm/set_detector/',methods=['POST'])
@@ -58,7 +88,7 @@ def send_question_bank():
     switch_file_path = '/var/www/html/location/switch.conf';
     switch = open(switch_file_path,'r');
 
-    if switch.read == 'on': 
+    if str(switch.read()) == 'on': 
         if data['detector_id'] in detectors:
             # 檢查題庫中資料有沒有這個 beacon_id
             for beacon in data['beacons']:
