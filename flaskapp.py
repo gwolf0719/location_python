@@ -30,26 +30,37 @@ def index():
     return '<b>Hello Flask A2pps</b>'
 
 
-# @app.route('/do_learm/')
-# def do_learm():
-#     dbdata = mongo.db.question_bank.find();
+@app.route('/do_learm/')
+def do_learm():
+    
+    dataframe = pd.DataFrame(list(mongo.db.question_bank.find()))
+    data_list = []
+    for dat in mongo.db.detectors.find():
+        data_list.append(dat['detector_id'])
 
-#     detectors = learm.detectors();
-#     X_train, X_test, y_train, y_test = train_test_split(detectors, dataframe[['block']], test_size=0.3, random_state=0)
-
-#     from sklearn.tree import DecisionTreeClassifier
-#     tree = DecisionTreeClassifier(criterion='entropy', max_depth=30, random_state=0)
-#     tree.fit(X_train, y_train)
-#     tree.predict(X_test)
-#     y_test['room'].values
-#     error = 0
-#     for i, v in enumerate(tree.predict(X_test)):
-#         if v != y_test['room'].values[i]:
-#             print(i, v)
-#             error += 1
-#     print(error)
-#     tree.score(X_test, y_test['room'])
-#     print(i);
+    X_train, X_test, y_train, y_test = train_test_split(dataframe[data_list], dataframe[['block']], test_size=0.3)
+    
+    # 隨機森林
+    from sklearn.ensemble import RandomForestClassifier
+    forest = RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=3, n_jobs=2)
+    forest.fit(X_train, y_train['block'].values)
+    y_test['block'].values
+    error = 0
+    for i, v in enumerate(forest.predict(X_test)):
+        if v != y_test['block'].values[i]:
+            #print(i, v)
+            error += 1
+    
+    # # 儲存 model
+    from sklearn.externals import joblib
+    joblib.dump(forest, '/var/www/html/locate.pkl')
+    
+    res = []
+    # Accuracy
+    Accuracy =  100 - (float(error) / i)*100
+    res.append({"Accuracy":Accuracy})
+   
+    return jsonify(res)
 
 # 設定 detector
 @app.route('/learm/set_detector/',methods=['POST'])
