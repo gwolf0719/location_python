@@ -1,9 +1,7 @@
 #coding=utf-8
 #flaskapp.py
-from flask import Flask,abort
+from flask import Flask,abort,jsonify,request,render_template
 
-from flask import jsonify
-from flask import request
 import json
 from flask_pymongo import PyMongo
 import time
@@ -40,6 +38,7 @@ def do_learm():
 
     X_train, X_test, y_train, y_test = train_test_split(dataframe[data_list], dataframe[['block']], test_size=0.3)
     
+    errs = [];
     # 隨機森林
     from sklearn.ensemble import RandomForestClassifier
     forest = RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=3, n_jobs=2)
@@ -141,6 +140,27 @@ def beacon_bank_switch():
     
 
 
+
+@app.route('/chk_rssi/',methods=['GET','POST'])
+def chk_rssi():
+    
+    if request.method == 'POST':
+        beacon_id = request.values.get('beacon_id')
+        detector_id = request.values.get('detector_id')
+        datalist = []
+        find = {
+            "beacon_id":beacon_id
+        }
+        rssi = ''
+        for d in mongo.db.question_bank.find(find).sort("time_key",-1 ).limit(1):
+            rssi = d[detector_id]
+        return render_template('show_rssi.html',str(rssi))
+            
+
+    return render_template('chk_rssi.html')
+
+
+#舊版
 
 # 硬體回傳原始資料開始
 @app.route('/api_setlocation/',methods=['POST'])

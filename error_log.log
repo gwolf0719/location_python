@@ -1,0 +1,56 @@
+[Tue Jun 26 15:47:31.901125 2018] [:error] [pid 18036] [client 220.134.123.84:52146] [2018-06-26 15:47:31,899] ERROR in app: Exception on /chk_rssi/ [GET]
+[Tue Jun 26 15:47:31.901169 2018] [:error] [pid 18036] [client 220.134.123.84:52146] Traceback (most recent call last):
+[Tue Jun 26 15:47:31.901174 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue Jun 26 15:47:31.901177 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     response = self.full_dispatch_request()
+[Tue Jun 26 15:47:31.901181 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue Jun 26 15:47:31.901185 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     rv = self.handle_user_exception(e)
+[Tue Jun 26 15:47:31.901188 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue Jun 26 15:47:31.901191 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     reraise(exc_type, exc_value, tb)
+[Tue Jun 26 15:47:31.901194 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue Jun 26 15:47:31.901197 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     rv = self.dispatch_request()
+[Tue Jun 26 15:47:31.901201 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue Jun 26 15:47:31.901204 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue Jun 26 15:47:31.901207 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/var/www/html/location/flaskapp.py", line 160, in chk_rssi
+[Tue Jun 26 15:47:31.901210 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     return render_template('chk_rssi.html')
+[Tue Jun 26 15:47:31.901214 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+[Tue Jun 26 15:47:31.901217 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+[Tue Jun 26 15:47:31.901220 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+[Tue Jun 26 15:47:31.901223 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     return self.get_template(template_name_or_list, parent, globals)
+[Tue Jun 26 15:47:31.901227 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+[Tue Jun 26 15:47:31.901230 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     return self._load_template(name, self.make_globals(globals))
+[Tue Jun 26 15:47:31.901233 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+[Tue Jun 26 15:47:31.901236 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     template = self.loader.load(self, name, globals)
+[Tue Jun 26 15:47:31.901239 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/loaders.py", line 125, in load
+[Tue Jun 26 15:47:31.901243 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     code = environment.compile(source, name, filename)
+[Tue Jun 26 15:47:31.901246 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 591, in compile
+[Tue Jun 26 15:47:31.901249 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     self.handle_exception(exc_info, source_hint=source_hint)
+[Tue Jun 26 15:47:31.901252 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+[Tue Jun 26 15:47:31.901259 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     reraise(exc_type, exc_value, tb)
+[Tue Jun 26 15:47:31.901262 2018] [:error] [pid 18036] [client 220.134.123.84:52146]   File "/var/www/html/location/templates/chk_rssi.html", line 5, in template
+[Tue Jun 26 15:47:31.901266 2018] [:error] [pid 18036] [client 220.134.123.84:52146]     {% endblock %}
+[Tue Jun 26 15:47:31.901269 2018] [:error] [pid 18036] [client 220.134.123.84:52146] TemplateSyntaxError: Encountered unknown tag 'endblock'.
+[Tue Jun 26 15:49:10.715157 2018] [:error] [pid 18233] [client 220.134.123.84:52609] [2018-06-26 15:49:10,714] ERROR in app: Exception on /chk_rssi/ [GET]
+[Tue Jun 26 15:49:10.715188 2018] [:error] [pid 18233] [client 220.134.123.84:52609] Traceback (most recent call last):
+[Tue Jun 26 15:49:10.715192 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+[Tue Jun 26 15:49:10.715196 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     response = self.full_dispatch_request()
+[Tue Jun 26 15:49:10.715199 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+[Tue Jun 26 15:49:10.715202 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     rv = self.handle_user_exception(e)
+[Tue Jun 26 15:49:10.715205 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+[Tue Jun 26 15:49:10.715209 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     reraise(exc_type, exc_value, tb)
+[Tue Jun 26 15:49:10.715212 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+[Tue Jun 26 15:49:10.715215 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     rv = self.dispatch_request()
+[Tue Jun 26 15:49:10.715218 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+[Tue Jun 26 15:49:10.715221 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     return self.view_functions[rule.endpoint](**req.view_args)
+[Tue Jun 26 15:49:10.715224 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/var/www/html/location/flaskapp.py", line 160, in chk_rssi
+[Tue Jun 26 15:49:10.715227 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     return render_template('chk_rssi.html')
+[Tue Jun 26 15:49:10.715229 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 135, in render_template
+[Tue Jun 26 15:49:10.715233 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     context, ctx.app)
+[Tue Jun 26 15:49:10.715235 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 117, in _render
+[Tue Jun 26 15:49:10.715238 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     rv = template.render(context)
+[Tue Jun 26 15:49:10.715241 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+[Tue Jun 26 15:49:10.715244 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     return self.environment.handle_exception(exc_info, True)
+[Tue Jun 26 15:49:10.715247 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+[Tue Jun 26 15:49:10.715250 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     reraise(exc_type, exc_value, tb)
+[Tue Jun 26 15:49:10.715253 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/var/www/html/location/templates/base.html", line 7, in template
+[Tue Jun 26 15:49:10.715256 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     <title>(% block title %)  {% endblock %}</title>
+[Tue Jun 26 15:49:10.715267 2018] [:error] [pid 18233] [client 220.134.123.84:52609] TemplateSyntaxError: Encountered unknown tag 'endblock'.
