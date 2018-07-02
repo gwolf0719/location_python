@@ -54,6 +54,7 @@
 [Tue Jun 26 15:49:10.715253 2018] [:error] [pid 18233] [client 220.134.123.84:52609]   File "/var/www/html/location/templates/base.html", line 7, in template
 [Tue Jun 26 15:49:10.715256 2018] [:error] [pid 18233] [client 220.134.123.84:52609]     <title>(% block title %)  {% endblock %}</title>
 [Tue Jun 26 15:49:10.715267 2018] [:error] [pid 18233] [client 220.134.123.84:52609] TemplateSyntaxError: Encountered unknown tag 'endblock'.
+<<<<<<< HEAD
 [Wed Jun 27 12:01:42.178336 2018] [:error] [pid 18364] [client 27.52.160.132:32741] [2018-06-27 12:01:42,143] ERROR in app: Exception on /do_learm/ [GET]
 [Wed Jun 27 12:01:42.178367 2018] [:error] [pid 18364] [client 27.52.160.132:32741] Traceback (most recent call last):
 [Wed Jun 27 12:01:42.178372 2018] [:error] [pid 18364] [client 27.52.160.132:32741]   File "/usr/lib64/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
@@ -120,3 +121,5 @@
 [Wed Jun 27 13:15:10.579134 2018] [:error] [pid 20009] [client 1.200.39.200:27394]   File "/var/www/html/location/flaskapp.py", line 156, in chk_rssi, referer: http://location.ladesign.tw/chk_rssi/
 [Wed Jun 27 13:15:10.579136 2018] [:error] [pid 20009] [client 1.200.39.200:27394]     rssi = d[detector_id], referer: http://location.ladesign.tw/chk_rssi/
 [Wed Jun 27 13:15:10.579139 2018] [:error] [pid 20009] [client 1.200.39.200:27394] KeyError: u'35A9002B888C', referer: http://location.ladesign.tw/chk_rssi/
+=======
+>>>>>>> 6547440b7a6d378df146d5ae9bfeb829aa9c25b2

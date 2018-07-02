@@ -154,7 +154,11 @@ def chk_rssi():
         rssi = ''
         for d in mongo.db.question_bank.find(find).sort("time_key",-1 ).limit(1):
             rssi = d[detector_id]
+<<<<<<< HEAD
         return str(rssi)
+=======
+        return render_template('show_rssi.html',str(rssi))
+>>>>>>> 6547440b7a6d378df146d5ae9bfeb829aa9c25b2
             
 
     return render_template('chk_rssi.html')
