@@ -1,13 +1,20 @@
 #coding=utf-8
 #flaskapp.py
-from flask import Flask,abort
+from flask import Flask,abort,jsonify,request,render_template
 
-from flask import jsonify
-from flask import request
 import json
 from flask_pymongo import PyMongo
 import time
 import learm
+
+import pandas as pd
+import tensorflow as tf
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+# from sklearn import datasets
+
+
 
 app = Flask(__name__)
 
@@ -20,6 +27,39 @@ mongo = PyMongo(app)
 def index():
     return '<b>Hello Flask A2pps</b>'
 
+
+@app.route('/do_learm/')
+def do_learm():
+    
+    dataframe = pd.DataFrame(list(mongo.db.question_bank.find()))
+    data_list = []
+    for dat in mongo.db.detectors.find():
+        data_list.append(dat['detector_id'])
+
+    X_train, X_test, y_train, y_test = train_test_split(dataframe[data_list], dataframe[['block']], test_size=0.3)
+    
+    errs = [];
+    # 隨機森林
+    from sklearn.ensemble import RandomForestClassifier
+    forest = RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=3, n_jobs=2)
+    forest.fit(X_train, y_train['block'].values)
+    y_test['block'].values
+    error = 0
+    for i, v in enumerate(forest.predict(X_test)):
+        if v != y_test['block'].values[i]:
+            #print(i, v)
+            error += 1
+    
+    # # 儲存 model
+    from sklearn.externals import joblib
+    joblib.dump(forest, '/var/www/html/locate.pkl')
+    
+    res = []
+    # Accuracy
+    Accuracy =  100 - (float(error) / i)*100
+    res.append({"Accuracy":Accuracy})
+   
+    return jsonify(res)
 
 # 設定 detector
 @app.route('/learm/set_detector/',methods=['POST'])
@@ -58,7 +98,7 @@ def send_question_bank():
     switch_file_path = '/var/www/html/location/switch.conf';
     switch = open(switch_file_path,'r');
 
-    if switch.read == 'on': 
+    if str(switch.read()) == 'on': 
         if data['detector_id'] in detectors:
             # 檢查題庫中資料有沒有這個 beacon_id
             for beacon in data['beacons']:
@@ -100,6 +140,27 @@ def beacon_bank_switch():
     
 
 
+
+@app.route('/chk_rssi/',methods=['GET','POST'])
+def chk_rssi():
+    
+    if request.method == 'POST':
+        beacon_id = request.values.get('beacon_id')
+        detector_id = request.values.get('detector_id')
+        datalist = []
+        find = {
+            "beacon_id":beacon_id
+        }
+        rssi = ''
+        for d in mongo.db.question_bank.find(find).sort("time_key",-1 ).limit(1):
+            rssi = d[detector_id]
+        return str(rssi)
+            
+
+    return render_template('chk_rssi.html')
+
+
+#舊版
 
 # 硬體回傳原始資料開始
 @app.route('/api_setlocation/',methods=['POST'])
